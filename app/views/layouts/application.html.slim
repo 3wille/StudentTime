@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Student Time
+    = csrf_meta_tags
+    
+    = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+
+  body
+    nav.light-blue role="navigation"
+      .nav-wrapper.container
+        a.brand-logo id="logo-container" href="#" Logo
+        ul.right.hide-on-med-and-down
+          li
+            a href="/time_entries" Entries
+        ul.side-nav id="nav-mobile" 
+         li
+          a href="/time_entries" Entries
+        a.button-collapse href="" data-activates="nav-mobile"
+          i.material-icons.fa.fa-bars
+
+    = yield
