@@ -1,0 +1,19 @@
+.span6
+  = form_for @time_entry do |f|
+    - if @time_entry.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@time_entry.errors.count, "error")} prohibited this time_entry from being saved:"
+        ul
+          - @time_entry.errors.full_messages.each do |message|
+            li = message
+
+    .field
+      = f.label :date
+      = f.date_field :date, class: "datepicker", id: "time_entry_date"
+    .field
+      = f.label :length
+      = f.text_field :length
+    br
+      .s6
+        .actions
+          = f.submit nil, { class: "btn waves-effect waves-light" }

@@ -1,0 +1,26 @@
+#index-header.section
+  .container
+      h1.header Entries
+
+.container
+  table
+    thead
+      tr
+        th Date
+        th Length
+        th
+        th
+        th
+
+    tbody
+      - @time_entries.each do |time_entry|
+        tr
+          td = time_entry.date
+          td = time_entry.length
+          td = link_to 'Show', time_entry
+          td = link_to 'Edit', edit_time_entry_path(time_entry)
+          td = link_to 'Destroy', time_entry, data: { confirm: 'Are you sure?' }, method: :delete
+
+  br
+
+  = link_to 'New Time entry', new_time_entry_path, class: "waves-effect waves-light btn"
