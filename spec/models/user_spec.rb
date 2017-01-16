@@ -12,10 +12,10 @@ RSpec.describe User, type: :model do
   describe "#from_omniauth!" do
     it "creates a new user with the name given in the hash" do
       user = User.from_omniauth!({
-        "info": {
-          "name": "Jon Doe",
+        info: {
+          name: "Jon Doe",
         },
-      })
+      }.deep_stringify_keys)
 
       expect(user.name).to eq "Jon Doe"
     end
