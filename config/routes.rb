@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: redirect("/time_entries")
+  root to: "landing_page#index"
 
   get '/auth/:provider/callback', to: 'sessions#create'
 
