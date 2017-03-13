@@ -1,10 +1,11 @@
 class TimeEntriesController < ApplicationController
   before_action :set_time_entry, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /time_entries
   # GET /time_entries.json
   def index
-    @time_entries = TimeEntry.all
+    @time_entries = current_user.time_entries
   end
 
   # GET /time_entries/1
@@ -25,7 +26,7 @@ class TimeEntriesController < ApplicationController
   # POST /time_entries
   # POST /time_entries.json
   def create
-    @time_entry = TimeEntry.new(time_entry_params)
+    @time_entry = TimeEntry.new(time_entry_params.merge(user: current_user))
 
     respond_to do |format|
       if @time_entry.save

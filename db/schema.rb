@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161227222801) do
+ActiveRecord::Schema.define(version: 20170116120014) do
 
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20161227222801) do
     t.float    "length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_time_entries_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

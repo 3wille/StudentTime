@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def authenticate_user!
+    unless current_user
+      redirect_to "/auth/twitter"
+    end
+  end
+
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
   end

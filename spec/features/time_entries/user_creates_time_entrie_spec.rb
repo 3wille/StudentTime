@@ -2,6 +2,8 @@ require "rails_helper"
 
 feature "User creates a Time Entry" do
   scenario "enters both date and length" do
+    user = create(:user)
+    login_as(user)
     visit new_time_entry_path
 
     fill_in "Length", with: "12"

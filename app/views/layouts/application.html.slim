@@ -18,7 +18,7 @@ html
             - if signed_in?
               = link_to "Logout", sessions_path, method: :delete
             - else
-              a href="/auth/twitter"
+              = link_to "Login" ,"/auth/twitter"
         ul.side-nav id="nav-mobile" 
          li
           a href="/time_entries" Entries

@@ -7,3 +7,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     secure_image_url: true,
   }
 end
+
+OmniAuth.config.logger = Rails.logger
