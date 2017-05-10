@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/auth/failure", to: "sessions#failure"
   delete "sessions" => "sessions#destroy"
 
+  get "/dashboard", to: "dashboard#index"
   resources :time_entries
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

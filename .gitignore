@@ -1,3 +1,6 @@
+# Ignore node stuff
+node_modules
+
 # Ignore secrets
 config/initializers/secrets.rb
 

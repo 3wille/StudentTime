@@ -1,3 +1,7 @@
 class LandingPageController < ApplicationController
-  def index; end
+  def index
+    if signed_in?
+      redirect_to "/dashboard"
+    end
+  end
 end

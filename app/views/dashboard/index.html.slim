@@ -1,0 +1,7 @@
+.container
+  h1 Dashboard
+  .row
+    .col.s4
+      = render partial: "progress_card", locals: { max_value: 20, current_value: @week_sum, title: "week" }
+    .col.s4
+      = render partial: "progress_card", locals: { max_value: 80, current_value: @month_sum, title: "month" }

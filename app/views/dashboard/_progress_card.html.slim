@@ -1,0 +1,5 @@
+.card.blue-grey
+  .card-content
+    span.card-title= "This #{title}"
+    hr
+    .progressbar id=title max_value=max_value current_value=current_value = "#{number_with_precision(current_value, strip_insignificant_zeros: true)}/#{max_value}"
