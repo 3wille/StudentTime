@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root to: "landing_page#index"
 
+  # Auth
   match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
   get "/auth/failure", to: "sessions#failure"
-  delete "sessions" => "sessions#destroy"
+  delete "sessions", to: "sessions#destroy"
 
   get "/dashboard", to: "dashboard#index"
   resources :time_entries
